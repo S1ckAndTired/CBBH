@@ -11,6 +11,7 @@ Stuff for CBBH
   Intro to MySQL
 
     Connect to database
+    sudo service mysql start
     
     mysql -h 94.237.62.195 -P 39097 -u root --password
     -h : for host/target
@@ -23,5 +24,6 @@ Stuff for CBBH
     select * from employees where first_name LIKE 'Bar%' AND hire_date='1990-01-01';
     LIKE : You may use when searching for a substring in string (i.e Bar = Barton).
     % : Starts with (used in mysql)
-  
+
+    ')+or+id=4--+-
   
