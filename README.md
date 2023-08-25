@@ -24,3 +24,4 @@ Stuff for CBBH
     LIKE : You may use when searching for a substring in string (i.e Bar = Barton).
     % : Starts with (used in mysql)
   
+  
