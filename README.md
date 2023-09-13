@@ -63,6 +63,18 @@ Stuff for CBBH
     T: Time-based blind
     Q: Inline queries
 
+    #To parse erros and see the response
+    --parse-errors
+
+    #Level/Risk
+    Risk: Might cause database entry loss or DoS (Denial of Service) [1-3]
+    Level: Extends vectors and boundaries (i.e the lower the expectancy, the higher the level) [1-5]
+
+    #To display the payloads
+    -v 3 [verbose level 3]
+
+    #To provide a certain number of cols
+    --union-cols=1337
 
     
     
