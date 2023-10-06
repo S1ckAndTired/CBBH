@@ -98,7 +98,8 @@ Stuff for CBBH
 
     ##NOTE: If slash or backslash is blacklisted, you may use environment variable that have these chars
     <LINUX>
-    ${PATH:0:1} - Users the slash at the $PATH variable
+    ${PATH:0:1} - Uses the slash at the $PATH variable
+    ${LS_COLORS:10:1} - Uses tha semi-colon at the $LS_COLORS variable
 
     <WINDOWS>
     echo %HOMEPATH:~6,-11%
