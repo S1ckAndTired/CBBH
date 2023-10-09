@@ -103,6 +103,9 @@ Stuff for CBBH
 
     <WINDOWS>
     echo %HOMEPATH:~6,-11%
+
+    #You can actaully use environment variables inside of bash brace expension
+    {ls,${PATH:0:1}home}
     
   Injection Operator | Injection Character	| URL-Encoded Character| Executed Command
   |---|---|---|---|
