@@ -107,6 +107,10 @@ Stuff for CBBH
     #You can actaully use environment variables inside of bash brace expension
     {ls,${PATH:0:1}home}
     
+
+    #Blacklisted commands doesn't seem to work inside {}
+
+    
   Injection Operator | Injection Character	| URL-Encoded Character| Executed Command
   |---|---|---|---|
   |Semicolon | ; |	%3b	| Both
