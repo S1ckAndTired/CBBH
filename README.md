@@ -174,5 +174,11 @@ Stuff for CBBH
          the next password.
     -f : exit after the first found login/password pair
 
-    
+    http-get : For loging get based
+    http-post-form : For loging post based (Ex.: /login.php:username=^USER^&password=^PASS^:F=<form name='login')
+
+    # Custom stuff
+    Custom password wordlist - https://github.com/Mebus/cupp
+    Custom username wordlist - git clone https://github.com/urbanadventurer/username-anarchy.git
+
     
