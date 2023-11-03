@@ -181,4 +181,14 @@ Stuff for CBBH
     Custom password wordlist - https://github.com/Mebus/cupp
     Custom username wordlist - git clone https://github.com/urbanadventurer/username-anarchy.git
 
+
+  UPLOAD ATTACK
+
+    #Web content-type
+    wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Miscellaneous/web/content-type.txt
+
+    #When trying to read a local file with xxe attack in scg, if `file:///` doesn't work right away, try php filter `php://filter/convert.base64-encode/resource=index.php`
+
+    #When trying to bypass extension filter, this method `blah.php.jpg` is valid one, but it doens't work try `blah.jpg.php`
+
     
