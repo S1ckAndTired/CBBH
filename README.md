@@ -243,6 +243,8 @@ XXE attack
     ]>
 
 FILE INCLUSION
+
+    !!!Sometimes you/ve gotta to encode even slashes
     
     #Wordlists
     https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt
