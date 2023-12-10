@@ -123,6 +123,23 @@ Stuff for CBBH
   |Sub-Shell |	\`\` | %60%60 |	Both (Linux-only)
   |Sub-Shell | $() | %24%28%29 | Both (Linux-only)
 
+  ;
+  \n
+  &
+  |
+  &&
+  ||
+  ``
+  $()
+  %3b
+  %0a
+  %26
+  %7c
+  %26%26
+  %7c%7c
+  %60%60
+  %24%28%29
+
   Server-Side Attacks
 
     #SSI cheat sheet
